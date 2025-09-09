@@ -47,7 +47,7 @@ using namespace std;
 #define randomInit(start, end)  \
 	random_device rd; \
 	mt19937 gen(rd()); \
-	uniform_int_distribution<int> cookRandom(start, end)
+	uniform_int_distribution<int> dis(start, end)
 
 #define sortArray(ary) sort(ary.begin(), ary.end())
 #define reverseArray(ary) reverse(ary.begin(), ary.end())
