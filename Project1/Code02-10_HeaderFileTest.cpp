@@ -27,13 +27,13 @@ int main()
 	println("** 로또 번호 생성을 시작합니다. **");
 	while (true)
 	{
-		print("몇 번을 뽑을까요? ");
+		print("몇 개를 뽑을까요?(1 ~ 50) ");
 		cin >> cnt;
-		if (cnt > 0 && cnt <= 45)
+		if (cnt > 0 && cnt <= 50)
 			break;
 
 		system("cls");
-		print("1에서 45 사이의 숫자를 입력하세요.");
+		print("1에서 50개 까지만 생성이 가능합니다.");
 		Sleep(700);
 		system("cls");
 	}
