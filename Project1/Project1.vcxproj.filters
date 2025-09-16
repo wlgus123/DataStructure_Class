@@ -69,6 +69,9 @@
     <ClCompile Include="Code04-08.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Code04-09.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
