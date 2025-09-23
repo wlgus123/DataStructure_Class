@@ -50,6 +50,39 @@ void insertNode(string findData, string insertData)
 	memory.push_back(node);
 }
 
+// 노드 삭제
+void deleteNode(string deleteData)
+{
+	Node* last;
+	if (head->data == deleteData)
+	{
+		current = head;
+		head = head->link;
+		last = head;
+		// 마지막 노드를 찾으면 반복 종료
+		while (last->link != current)
+		{
+			last = last->link;
+		}
+		last->link = head;
+		current->data = "None";	// 현재 노드 제거
+		return;
+	}
+
+	current = head;
+	while (current->link != head)
+	{
+		pre = current;
+		current = current->link;
+		if (current->data == deleteData)
+		{
+			pre->link = current->link;
+			current->data = "None";
+			return;
+		}
+	}
+}
+
 // 노드 출력
 void printNodes(Node* start)
 {
@@ -102,6 +135,16 @@ int main()
 	printNodes(head);
 
 	insertNode("재남", "문별");	// 재남은 리스트에 없음. 따라서 맨 뒤에 삽입
+	printNodes(head);
+
+	// 노드 삭제
+	deleteNode("문별");
+	printNodes(head);
+
+	deleteNode("지효");
+	printNodes(head);
+
+	deleteNode("재남");	// 없는 데이터는 무시
 	printNodes(head);
 	
 	freeMemory();
