@@ -83,6 +83,25 @@ void deleteNode(string deleteData)
 	}
 }
 
+// 노드 검색
+Node* findNode(string findData)
+{
+	current = head;
+	if (head->data == findData)
+	{
+		return current;
+	}
+	while (current->link != head)
+	{
+		current = current->link;
+		if (current->data == findData)
+		{
+			return current;
+		}
+	}
+	return new Node{ "None", NULL };
+}
+
 // 노드 출력
 void printNodes(Node* start)
 {
@@ -146,6 +165,14 @@ int main()
 
 	deleteNode("재남");	// 없는 데이터는 무시
 	printNodes(head);
+
+	// 노드 검색
+	Node* fNode;
+	fNode = findNode("다현");
+	println(fNode->data);
+
+	fNode = findNode("재남");	// 없는 데이터는 새로운 노드 None을 만들어서 반환
+	println(fNode->data);
 	
 	freeMemory();
 
