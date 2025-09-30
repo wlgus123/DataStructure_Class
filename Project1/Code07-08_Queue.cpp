@@ -7,9 +7,24 @@ int front = -1, rear = -1;
 // 큐가 꽉 찼는지 확인하는 함수
 bool isQueueFull()
 {
-	if (rear == SIZE - 1)
+	if (rear != SIZE - 1)
+		return false;
+	else if ((rear == SIZE - 1) && (front == -1))
 		return true;
-	return false;
+	else
+	{
+		while (front > -1)
+		{
+			for (int i = front + 1; i < SIZE; i++)
+			{
+				queue[i - 1] = queue[i];
+				queue[i] = "None";
+			}
+			front--;
+			rear--;
+			return false;
+		}
+	}
 }
 
 // 큐가 비었는지 확인하는 함수
@@ -37,16 +52,13 @@ string deQueue()
 {
 	if (isQueueEmpty())
 	{
-		if (isQueueEmpty())
-		{
-			println("큐가 비었습니다.");
-			return "None";
-		}
-		front++;
-		string data = queue[front];
-		queue[front] = "None";
-		return data;
+		println("큐가 비었습니다.");
+		return "None";
 	}
+	front++;
+	string data = queue[front];
+	queue[front] = "None";
+	return data;
 }
 
 // 큐에서 front + 1 위치의 데이터를 확인하는 함수
