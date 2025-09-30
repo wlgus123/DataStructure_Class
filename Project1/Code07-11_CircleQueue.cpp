@@ -2,29 +2,14 @@
 
 int SIZE;
 Array <string> queue;
-int front = -1, rear = -1;
+int front = 0, rear = 0;
 
-// 큐가 꽉 찼는지 확인하는 함수
+// 큐가 다 찼는지 확인하는 함수
 bool isQueueFull()
 {
-	if (rear != SIZE - 1)
-		return false;
-	else if ((rear == SIZE - 1) && (front == -1))
+	if ((rear + 1) % SIZE == front)
 		return true;
-	else
-	{
-		while (front > -1)
-		{
-			for (int i = front + 1; i < SIZE; i++)
-			{
-				queue[i - 1] = queue[i];
-				queue[i] = "None";
-			}
-			front--;
-			rear--;
-			return false;
-		}
-	}
+	return false;
 }
 
 // 큐가 비었는지 확인하는 함수
@@ -35,16 +20,16 @@ bool isQueueEmpty()
 	return false;
 }
 
-// 큐에 데이터 삽입
+// 큐 데이터 삽입 함수
 void enQueue(string data)
 {
-	// 큐가 꽉 찬 경우 아무것도 하지 않고 반환
+	// 큐가 다 찼는지 확인
 	if (isQueueFull())
 	{
 		println("큐가 꽉 찼습니다.");
 		return;
 	}
-	rear++;
+	rear = (rear + 1) % SIZE;
 	queue[rear] = data;
 }
 
@@ -55,13 +40,12 @@ string deQueue()
 		println("큐가 비었습니다.");
 		return "None";
 	}
-	front++;
+	front = (front + 1) % SIZE;
 	string data = queue[front];
 	queue[front] = "None";
 	return data;
 }
 
-// 큐에서 front + 1 위치의 데이터를 확인하는 함수
 string peek()
 {
 	if (isQueueEmpty())
@@ -69,18 +53,17 @@ string peek()
 		println("큐가 비었습니다.");
 		return "None";
 	}
-	return queue[front + 1];
+	return queue[(front + 1) % SIZE];
 }
 
 int main()
 {
-	input(SIZE, "큐 크기를 입력하세요 ==>");
+	input(SIZE, "큐 크기를 입력하세요 ==> ");
 	for (int i = 0; i < SIZE; i++)
 		queue.push_back("None");
 
 	char select;
 	input(select, "삽입(I)/추출(E)/확인(V)/종료(X) 중 하나를 선택 ==> ");
-
 	string data;
 	while (select != 'X' && select != 'x')
 	{
@@ -88,25 +71,28 @@ int main()
 		{
 		case 'I':
 		case 'i':
-			input(data, "입력할 데이터 -->");
+			input(data, "입력할 데이터--> ");
 			enQueue(data);
 			print("큐 상태: ");
 			printArray(queue);
+			println("front: " + to_string(front) + ", rear: " + to_string(rear));
 			break;
 
 		case 'E':
 		case 'e':
 			data = deQueue();
-			println("추출한 데이터 -->" + data);
+			println("추출한 데이터 --> " + data);
 			print("큐 상태: ");
 			printArray(queue);
+			println("front: " + to_string(front) + ", rear: " + to_string(rear));
 			break;
 
 		case 'V':
 		case 'v':
 			data = peek();
-			println("다음에 나올 데이터 확인 -->" + data);
+			println("다음에 나올 데이터 확인 --> " + data);
 			printArray(queue);
+			println("front: " + to_string(front) + ", rear: " + to_string(rear));
 			break;
 
 		default:
@@ -114,8 +100,7 @@ int main()
 		}
 		input(select, "삽입(I)/추출(E)/확인(V)/종료(X) 중 하나를 선택 ==> ");
 	}
-	println("프로그램 종료");
+	println("프로그램 종료!");
 
 	return 0;
 }
-
