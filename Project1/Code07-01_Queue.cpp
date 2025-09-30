@@ -19,5 +19,28 @@ int main()
 
 	println("<-- 입구");
 
+	string data;
+
+	front++;
+	data = queue[front];
+	queue[front] = "None";
+	println("deQueue-->" + data);
+	
+	front++;
+	data = queue[front];
+	queue[front] = "None";
+	println("deQueue-->" + data);
+	front++;
+	data = queue[front];
+	queue[front] = "None";
+	println("deQueue-->" + data);
+	println("-----------------");
+
+	println("------- 큐 상태 -------");
+	print("[출구] <--");
+	for (int i = 0; i < len(queue); i++)
+		print(queue[i]);
+	println("<-- [입구]");
+
 	return 0;
 }
