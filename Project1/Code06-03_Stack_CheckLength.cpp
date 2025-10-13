@@ -12,7 +12,7 @@ bool isStackFull()
 		return false;
 }
 
-void push(string data)
+void pushInventory(string data)
 {
 	if (isStackFull())
 	{
@@ -26,9 +26,9 @@ void push(string data)
 int main()
 {
 	printArray(stack);
-	push("환타");
+	pushInventory("환타");
 	printArray(stack);
-	push("게토레이");
+	pushInventory("게토레이");
 
 	//print("스택이 꽉 찼는지 여부: ");
 	//println((isStackFull() ? "true" : "false"));	// 0: false, 1: true

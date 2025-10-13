@@ -28,7 +28,7 @@ bool isStackEmpty() // 스택이 비었는지 확인하는 함수
     }
 }
 
-void push(string data) // 스택에 데이터를 삽입하는 함수
+void pushInventory(string data) // 스택에 데이터를 삽입하는 함수
 {
     if (isStackFull())
     {
@@ -39,7 +39,7 @@ void push(string data) // 스택에 데이터를 삽입하는 함수
     stack[top] = data;
 }
 
-string pop() // 스택에서 데이터를 추출하는 함수
+string popInventory() // 스택에서 데이터를 추출하는 함수
 {
     if (isStackEmpty())
     {
@@ -78,12 +78,12 @@ int main()
 		{
 		case 'I': case 'i':
 			input(data, "입력할 데이터 --> ");
-			push(data);
+			pushInventory(data);
 			print("스택 상태 : ");
 			printArray(stack);
 			break;
 		case 'E': case 'e':
-			data = pop();
+			data = popInventory();
 			println("추출한 데이터 --> " + data);
 			print("스택 상태 : ");
 			printArray(stack);

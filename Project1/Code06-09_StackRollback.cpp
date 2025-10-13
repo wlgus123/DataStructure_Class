@@ -30,7 +30,7 @@ bool isStackEmpty() // 스택이 비었는지 확인하는 함수
     }
 }
 
-void push(string data) // 스택에 데이터를 삽입하는 함수
+void pushInventory(string data) // 스택에 데이터를 삽입하는 함수
 {
     if (isStackFull())
     {
@@ -41,7 +41,7 @@ void push(string data) // 스택에 데이터를 삽입하는 함수
     stack[top] = data;
 }
 
-string pop() // 스택에서 데이터를 추출하는 함수
+string popInventory() // 스택에서 데이터를 추출하는 함수
 {
     if (isStackEmpty())
     {
@@ -76,7 +76,7 @@ int main()
     for (int i = 0; i < len(urls); i++)
     {
         string url = urls[i];
-        push(url);
+        pushInventory(url);
         string cmd = browser + url;
         //system(cmd.c_str());
         print(url + "-->");
@@ -87,7 +87,7 @@ int main()
 
     while (true)
     {
-        string url = pop();
+        string url = popInventory();
         if (url == "None")
             break;
         string cmd = browser + url;
