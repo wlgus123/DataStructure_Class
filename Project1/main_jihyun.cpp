@@ -213,6 +213,99 @@ string peek()
 // ==========================================================
 
 
+// ==================== 3. 전화번호부 (이중 연결리스트) ====================
+typedef struct _Contact
+{
+	string name;
+	string phone;
+	struct _Contact* prev = NULL;
+	struct _Contact* next = NULL;
+} Contact;
+
+Contact* headContact = NULL;
+Contact* tailContact = NULL;
+
+// 추가
+void addContact(string name, string phone)
+{
+	Contact* node = new Contact;
+	node->name = name;
+	node->phone = phone;
+
+	if (headContact == NULL)
+		headContact = tailContact = node;
+	else
+	{
+		tailContact->next = node;
+		node->prev = tailContact;
+		tailContact = node;
+	}
+}
+
+// 삭제
+void deleteContact(string name)
+{
+	Contact* cur = headContact;
+	while (cur != NULL)
+	{
+		if (cur->name == name)
+		{
+			if (cur->prev) cur->prev->next = cur->next;
+			else headContact = cur->next;
+			if (cur->next) cur->next->prev = cur->prev;
+			else tailContact = cur->prev;
+
+			println(cur->name + " 삭제됨");
+			delete cur;
+			return;
+		}
+		cur = cur->next;
+	}
+	println(name + " 을(를) 찾을 수 없음");
+}
+
+// 출력
+void printContacts()
+{
+	println("\n현재 전화번호부:");
+	Contact* cur = headContact;
+	while (cur != NULL)
+	{
+		println(cur->name + " : " + cur->phone);
+		cur = cur->next;
+	}
+}
+
+void PhoneBook()
+{
+	println("------ 3. 전화번호부 (이중 연결리스트) ------\n");
+
+	// 기본 5명
+	addContact("홍길동", "010-1111-1111");
+	addContact("김철수", "010-2222-2222");
+	addContact("이영희", "010-3333-3333");
+	addContact("박민수", "010-4444-4444");
+	addContact("최지훈", "010-5555-5555");
+	printContacts();
+
+	// 추가 5명
+	println("\n------ 추가 (5명 추가) ------");
+	addContact("지현", "010-6666-6666");
+	addContact("민지", "010-7777-7777");
+	addContact("도윤", "010-8888-8888");
+	addContact("하준", "010-9999-9999");
+	addContact("유진", "010-0000-0000");
+	printContacts();
+
+	// 삭제 3명
+	println("\n------ 삭제 (3명 삭제) ------");
+	deleteContact("김철수");
+	deleteContact("박민수");
+	deleteContact("유진");
+	printContacts();
+}
+
+
 // -----1. 공항 짐 컨베이어벨트: 원형리스트 사용-----
 void ConvayorBelt()
 {
