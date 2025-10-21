@@ -117,7 +117,10 @@
     <ClCompile Include="CodeTest_Blackjack.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Code09_01_Graph.cpp">
+    <ClCompile Include="Code09-01_Graph.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Code09-02_Graph2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
