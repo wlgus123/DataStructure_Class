@@ -57,6 +57,14 @@ int main()
 		}
 		memory.push_back(node);
 	}
+
+	print("[ ");
+	for (int i = 0; i < len(nameArr); i++)
+	{
+		print(nameArr[i] + " ");
+	}
+	println("]");
+
 	println("이진 탐색 트리 구성 완료!");
 	freeMemory();
 
