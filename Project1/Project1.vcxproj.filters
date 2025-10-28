@@ -141,6 +141,12 @@
     <ClCompile Include="Code08-03_BinaryTree_Insert.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Code08-05_BinaryTree_All.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Code08-06_BinaryTree_Application.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
