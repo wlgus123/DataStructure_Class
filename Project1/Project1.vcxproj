@@ -246,6 +246,7 @@
     <ClCompile Include="Code09-05.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Code10-01_Recursion.cpp" />
     <ClCompile Include="CodeTest_Blackjack.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
