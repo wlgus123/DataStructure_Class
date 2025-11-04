@@ -153,6 +153,9 @@
     <ClCompile Include="Code10-02_Resursion2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Code10-03_Resursion3_factorial.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
