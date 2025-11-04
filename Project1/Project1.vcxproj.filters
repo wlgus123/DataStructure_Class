@@ -168,6 +168,9 @@
     <ClCompile Include="Code10-08_powN.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Code10-09_arraySum.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
