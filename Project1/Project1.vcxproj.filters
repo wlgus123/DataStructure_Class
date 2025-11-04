@@ -156,6 +156,9 @@
     <ClCompile Include="Code10-03_Resursion3_factorial.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Code10-04_rocketCountDown.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
