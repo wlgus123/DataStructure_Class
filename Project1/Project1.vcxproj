@@ -252,13 +252,16 @@
     <ClCompile Include="Code10-02_Resursion2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Code10-03_Resursion3_factorial.cpp">
+    <ClCompile Include="Code10-04_Resursion3_factorial.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Code10-04_rocketCountDown.cpp">
+    <ClCompile Include="Code10-05_rocketCountDown.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Code10-05_star.cpp" />
+    <ClCompile Include="Code10-06_star.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Code10-07_gugudan.cpp" />
     <ClCompile Include="CodeTest_Blackjack.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
