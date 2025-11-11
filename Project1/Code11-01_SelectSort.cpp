@@ -1,6 +1,7 @@
 #include "Common.h"
 
-Array<int> testArr = { 55, 88, 33, 77 };
+Array<int> before = { 188, 162, 168, 120, 16 , 57, 68, 94, 165, 228, 133, 85, 12, 11, 95 };
+Array<int> after;
 
 int findMinIdx(Array<int> arr)
 {
@@ -18,9 +19,19 @@ int findMinIdx(Array<int> arr)
 
 int main()
 {
-	int minPos = findMinIdx(testArr);
-	print("최솟값 -->");
-	println(testArr[minPos]);
-	
+	print("정렬 전 -->");
+	printArray(before);
+	int arrSize = len(before);
+
+	for (int i = 0; i < arrSize; i++)
+	{
+		int minPos = findMinIdx(before);
+		after.push_back(before[minPos]);
+		del(before, minPos);
+	}
+
+	print("정렬 후 -->");
+	printArray(after);
+
 	return 0;
 }
